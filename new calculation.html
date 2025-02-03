@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigheart</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+            background-color: #202020;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        header nav a:hover {
+            color: #00aaff;
+        }
+
+        .main-content {
+            margin-top: 50px;
+        }
+
+        .main-content img {
+            max-width: 80%;
+            height: auto;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+
+        .main-content h1 {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        .main-content p {
+            font-size: 1.2em;
+        }
+
+        .calculator-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #151515;
+            border-top: 2px solid #00aaff;
+        }
+
+        .calculator-section h2 {
+            margin-bottom: 20px;
+            color: #00aaff;
+        }
+
+        .calculator-section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .calculator-section input, .calculator-section select, .calculator-section button {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .calculator-section .results span {
+            font-weight: bold;
+            color: #00aaff;
+        }
+
+        .explanation-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #202020;
+            border-top: 2px solid #00aaff;
+            text-align: left;
+            color: #ddd;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .explanation-section h3 {
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+
+        .explanation-section p {
+            margin-bottom: 20px;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #151515;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #202020;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/mnt/data/DALL·E 2025-02-01 23.05.26 - A modern and minimalist logo featuring a turtle that symbolizes holistic personal development, embodying health, mind, finance, and Dharma. The turtle.png" alt="Bigheart Logo">
+        </div>
+        <nav>
+            <a href="#knowledge">ความรู้ประดับหัว</a>
+            <a href="#course">สูตรเดียว</a>
+            <a href="#products">สินค้าเปลี่ยนชีวิต</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1>Bigheart</h1>
+        <img src="/mnt/data/20250201_2306_Clumsy Dog Office Adventures_simple_compose_01jk1461sve4yt48nzg3m56xnm.gif" alt="Dog working at desk">
+        <p>be your better version</p>
+        <p>ส่วนคำนวนด้านล่างนี้เลยยย</p>
+    </div>
+
+    <div class="calculator-section">
+        <h2>เครื่องคำนวณ</h2>
+
+        <!-- Advanced Macro Nutrients Calculator -->
+        <div>
+            <h3>คำนวณแคลอรี่และ Macro Nutrients ขั้นสูง</h3>
+            <label for="weight">น้ำหนัก (kg):</label>
+            <input type="number" id="weight" placeholder="กรอกน้ำหนักของคุณ">
+
+            <label for="height">ส่วนสูง (cm):</label>
+            <input type="number" id="height" placeholder="กรอกส่วนสูงของคุณ">
+
+            <label for="age">อายุ (ปี):</label>
+            <input type="number" id="age" placeholder="กรอกอายุของคุณ">
+
+            <label for="activity">ระดับกิจกรรม:</label>
+            <select id="activity">
+                <option value="1.2">แทบไม่ออกกำลังกาย</option>
+                <option value="1.375">ออกกำลังกายเบาๆ</option>
+                <option value="1.55">ออกกำลังกายปานกลาง</option>
+                <option value="1.725">ออกกำลังกายหนัก</option>
+                <option value="1.9">ออกกำลังกายหนักมาก</option>
+            </select>
+
+            <button type="button" id="calculate-tdee">คำนวณ TDEE และ BMR</button>
+            <div class="results">
+                <p>BMR: <span id="bmr-result">0</span> แคลอรี่</p>
+                <p>TDEE: <span id="tdee-result">0</span> แคลอรี่</p>
+            </div>
+        </div>
+
+        <!-- Macro Nutrients Ratio Calculator -->
+        <div>
+            <h3>คำนวณสัดส่วนโปรตีน คาร์โบไฮเดรต และไขมัน</h3>
+            <label for="calories">แคลอรี่ที่ต้องการต่อวัน:</label>
+            <input type="number" id="calories" placeholder="กรอกแคลอรี่">
+
+            <button type="button" id="calculate-macros">คำนวณ Macro Nutrients</button>
+            <div class="results">
+                <p>โปรตีน: <span id="protein-result">0</span> กรัม</p>
+                <p>คาร์โบไฮเดรต: <span id="carbs-result">0</span> กรัม</p>
+                <p>ไขมัน: <span id="fats-result">0</span> กรัม</p>
+            </div>
+        </div>
+
+        <!-- Sleep Debt Calculator -->
+        <div>
+            <h3>คำนวณ Sleep Debt เชิงลึก</h3>
+            <label for="needed-hours">ชั่วโมงที่ควรนอนต่อวัน:</label>
+            <input type="number" id="needed-hours" placeholder="7-9">
+
+            <label for="days">จำนวนวันที่ผ่านมา:</label>
+            <input type="number" id="days" placeholder="กรอกจำนวนวัน">
+
+            <label for="actual-hours">ชั่วโมงที่คุณนอนจริงต่อวัน:</label>
+            <input type="number" id="actual-hours" placeholder="กรอกชั่วโมงที่ได้นอนจริง">
+
+            <button type="button" id="calculate-sleep-debt">คำนวณ</button>
+            <div class="results">
+                <p>หนี้การนอนรวม: <span id="sleep-debt-result">0</span> ชั่วโมง</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="explanation-section">
+        <h2>รายละเอียดแต่ละส่วน</h2>
+
+        <h3>1. TDEE และ BMR</h3>
+        <p><b>BMR:</b> คือพลังงานที่ร่างกายต้องใช้ในแต่ละวันขณะพัก เช่น หาก BMR = 1500 แคลอรี่ นั่นเท่ากับพลังงานที่ใช้ในการรักษาการทำงานของร่างกาย เช่น หายใจ</p>
+        <p><b>TDEE:</b> คือพลังงานที่ร่างกายใช้ทั้งหมดในแต่ละวัน (รวมกิจกรรม) เช่น หาก TDEE = 2000 แคลอรี่ คุณสามารถกินแคลอรี่ในปริมาณนี้เพื่อรักษาน้ำหนัก</p>
+        <p><b>ประโยชน์:</b> ใช้ในการวางแผนการกิน ลดน้ำหนัก หรือเพิ่มน้ำหนักได้อย่างแม่นยำ</p>
+
+        <h3>2. Macro Nutrients</h3>
+        <p>ช่วยคำนวณสัดส่วนของโปรตีน คาร์โบไฮเดรต และไขมันที่เหมาะสม เช่น หากโปรตีน = 150 กรัม หมายความว่าคุณต้องกินโปรตีนในปริมาณนี้ต่อวันเพื่อเป้าหมาย เช่น เพิ่มกล้ามเนื้อ</p>
+        <p><b>ประโยชน์:</b> ช่วยให้การกินอาหารสอดคล้องกับเป้าหมายสุขภาพ</p>
+
+        <h3>3. Sleep Debt</h3>
+        <p>คำนวณเวลานอนที่ขาด เช่น หากคุณขาดนอนไป 10 ชั่วโมงใน 5 วัน การรู้ข้อมูลนี้ช่วยให้คุณปรับเวลาเพื่อชดเชยได้</p>
+        <p><b>ประโยชน์:</b> ลดผลกระทบจากการขาดนอน เช่น ความเหนื่อยล้า สมาธิลดลง</p>
+    </div>
+
+    <div class="contact-section">
+        <p><strong>เอาค่ามาปรึกษาได้ที่</strong></p>
+        <p>IG: bigheart1669</p>
+        <p>TIKTOK: doggy007x</p>
+        <p>YOUTUBE: Bigheart</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Bigheart. All rights reserved.
+    </footer>
+
+    <script>
+        // TDEE and BMR Calculator
+        document.getElementById('calculate-tdee').addEventListener('click', () => {
+            const weight = Number(document.getElementById('weight').value);
+            const height = Number(document.getElementById('height').value);
+            const age = Number(document.getElementById('age').value);
+            const activity = Number(document.getElementById('activity').value);
+
+            // Calculate BMR (Male formula as default)
+            const bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+
+            // Calculate TDEE
+            const tdee = bmr * activity;
+
+            // Display Results
+            document.getElementById('bmr-result').textContent = bmr.toFixed(1);
+            document.getElementById('tdee-result').textContent = tdee.toFixed(1);
+        });
+
+        // Macro Nutrients Calculator
+        document.getElementById('calculate-macros').addEventListener('click', () => {
+            const calories = Number(document.getElementById('calories').value);
+
+            const protein = (calories * 0.3) / 4; // 30% of calories from protein
+            const carbs = (calories * 0.4) / 4; // 40% of calories from carbs
+            const fats = (calories * 0.3) / 9; // 30% of calories from fats
+
+            document.getElementById('protein-result').textContent = protein.toFixed(1);
+            document.getElementById('carbs-result').textContent = carbs.toFixed(1);
+            document.getElementById('fats-result').textContent = fats.toFixed(1);
+        });
+
+        // Sleep Debt Calculator
+        document.getElementById('calculate-sleep-debt').addEventListener('click', () => {
+            const neededHours = Number(document.getElementById('needed-hours').value);
+            const days = Number(document.getElementById('days').value);
+            const actualHours = Number(document.getElementById('actual-hours').value);
+
+            const totalNeeded = neededHours * days;
+            const totalActual = actualHours * days;
+            const debt = totalNeeded - totalActual;
+
+            document.getElementById('sleep-debt-result').textContent = debt > 0 ? debt : 0;
+        });
+    </script>
+</body>
+</html>
